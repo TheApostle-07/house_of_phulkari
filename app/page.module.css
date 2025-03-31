@@ -1,13 +1,4 @@
-:global(:root) {
-  --color-primary: #333;
-  --color-secondary: #999;
-  --color-bg: #fff;
-  --color-text: #333;
-  --color-dark: #222;
-  --color-light: #fff;
-  --transition-speed: 0.3s;
-  --header-height: 70px;
-}
+
 
 .main {
   background-color: var(--color-bg);
