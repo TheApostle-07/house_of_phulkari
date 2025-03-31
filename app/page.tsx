@@ -61,7 +61,15 @@ export default function Home() {
       <nav className={styles.nav}>
         <div className={styles.logo}>House of Phulkari</div>
 
-        {/* Hamburger button (mobile) */}
+        {/* Desktop Nav Links */}
+        <div className={styles.desktopNavLinks}>
+          <a href="#hero">Home</a>
+          <a href="#featured">Shop</a>
+          <a href="#about">About Us</a>
+          <a href="#">Contact</a>
+        </div>
+
+        {/* Hamburger button (for mobile) */}
         <button
           className={styles.hamburger}
           onClick={() => setMenuOpen(!menuOpen)}
@@ -72,7 +80,7 @@ export default function Home() {
           <span className={styles.bar}></span>
         </button>
 
-        {/* Nav drawer (appears from right when open) */}
+        {/* Nav drawer (mobile menu) */}
         <div className={`${styles.navDrawer} ${menuOpen ? styles.navActive : ""}`}>
           <button
             className={styles.closeBtn}
@@ -95,8 +103,7 @@ export default function Home() {
         <div className={styles.heroContent}>
           <h1>Experience Phulkari</h1>
           <p>
-            Embrace the vibrant colors, intricate designs, and cultural richness
-            of traditional Phulkari craftsmanship.
+            Embrace the vibrant colors, intricate designs, and cultural richness of traditional Phulkari craftsmanship.
           </p>
           <button>Shop Now</button>
         </div>
@@ -108,7 +115,7 @@ export default function Home() {
         <div className={styles.productList}>
           {products.map((product) => (
             <div key={product.id} className={styles.productItem}>
-              {/* Top Row: Heart icon & 'Just In' label */}
+              {/* Top Row: Wishlist icon & 'Just In' label */}
               <div className={styles.productTopBar}>
                 <button className={styles.wishlistBtn} aria-label="Add to Wishlist">
                   ♥
@@ -134,11 +141,7 @@ export default function Home() {
                 {product.colors?.length > 0 && (
                   <div className={styles.colorRow}>
                     {product.colors.map((color, idx) => (
-                      <span
-                        key={idx}
-                        className={styles.swatch}
-                        style={{ backgroundColor: color }}
-                      />
+                      <span key={idx} className={styles.swatch} style={{ backgroundColor: color }} />
                     ))}
                   </div>
                 )}
@@ -165,20 +168,13 @@ export default function Home() {
       <section id="about" className={styles.aboutUs}>
         <h2>Our Story</h2>
         <p>
-          House of Phulkari celebrates the age-old craft of Phulkari—
-          literally meaning “flower work.” Each piece is lovingly created
-          with meticulous attention to detail, reflecting a tradition that
-          has been passed down for generations. Our mission is to bring this
-          radiant heritage to you, blending traditional artistry with modern
-          aesthetics.
+          House of Phulkari celebrates the age-old craft of Phulkari—literally meaning “flower work.” Each piece is lovingly created with meticulous attention to detail, reflecting a tradition that has been passed down for generations. Our mission is to bring this radiant heritage to you, blending traditional artistry with modern aesthetics.
         </p>
       </section>
 
       {/* Footer */}
       <footer className={styles.footer}>
-        <p>
-          &copy; {new Date().getFullYear()} House of Phulkari. All rights reserved.
-        </p>
+        <p>&copy; {new Date().getFullYear()} House of Phulkari. All rights reserved.</p>
         <p>
           <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
         </p>
