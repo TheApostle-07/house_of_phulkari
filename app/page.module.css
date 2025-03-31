@@ -10,11 +10,11 @@
 
 /* ==================== NAVIGATION ==================== */
 .nav {
-  position: fixed;           /* Fixed header */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 2000;             /* Increased z-index to keep header on top */
+  z-index: 2000;
   background-color: var(--color-light);
   display: flex;
   align-items: center;
@@ -33,7 +33,23 @@
   color: var(--color-dark);
 }
 
-/* Hamburger button (desktop hidden) */
+/* Desktop Nav Links */
+.desktopNavLinks {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .desktopNavLinks {
+    display: flex;
+    gap: 1.5rem;
+  }
+  /* Hide the mobile nav drawer on desktop */
+  .navDrawer {
+    display: none;
+  }
+}
+
+/* Hamburger button (mobile only) */
 .hamburger {
   display: none;
   background: none;
@@ -43,6 +59,12 @@
   gap: 5px;
 }
 
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+}
+
 .bar {
   width: 22px;
   height: 2px;
@@ -50,7 +72,7 @@
   transition: background-color var(--transition-speed);
 }
 
-/* The nav drawer (mobile menu) - hidden offscreen by default */
+/* Mobile Nav Drawer */
 .navDrawer {
   position: fixed;
   top: 0;
@@ -69,7 +91,6 @@
   right: 0;
 }
 
-/* Close button inside drawer */
 .closeBtn {
   align-self: flex-end;
   background: none;
@@ -80,7 +101,6 @@
   color: var(--color-dark);
 }
 
-/* Nav links inside the drawer */
 .navLinks {
   display: flex;
   flex-direction: column;
@@ -99,29 +119,11 @@
   color: var(--color-primary);
 }
 
-/* For desktop: normal nav bar with hidden drawer button */
-@media (min-width: 769px) {
-  .hamburger {
-    display: none;
-  }
-  .navDrawer {
-    display: none; /* The side drawer is hidden on desktop */
-  }
-}
-
-/* For mobile: show hamburger, hide normal nav */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-}
-
 /* ==================== HERO SECTION ==================== */
 .hero {
   position: relative;
   width: 100%;
   min-height: 80vh;
-  /* Use a linear gradient overlay so the background image is visible yet dimmed */
   background: linear-gradient(
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.3)
@@ -131,7 +133,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: var(--header-height); /* Ensure the hero starts below the fixed header */
+  margin-top: var(--header-height);
 }
 
 .heroContent {
